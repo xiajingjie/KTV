@@ -69,20 +69,34 @@ export async function GET(request: NextRequest) {
       wallpaper: `${baseUrl}/screenshot1.png`, // 使用项目截图作为壁纸
       
       // 影视源配置
-      sites: sourceConfigs.map((source) => ({
-        key: source.key || source.name,
-        name: source.name,
-        type: 0, // 影视源
-        api: source.api,
-        searchable: 1, // 可搜索
-        quickSearch: 1, // 支持快速搜索
-        filterable: 1, // 支持分类筛选
-        ext: source.detail || '', // 详情页地址作为扩展参数
-        timeout: 30, // 30秒超时
-        categories: [
-          "电影", "电视剧", "综艺", "动漫", "纪录片", "短剧"
-        ]
-      })),
+      sites: sourceConfigs.map((source) => {
+        // 更智能的type判断逻辑：
+        // 1. 如果api地址包含 "/provide/vod" 且不包含 "at/xml"，则认为是JSON类型 (type=1)
+        // 2. 如果api地址包含 "at/xml"，则认为是XML类型 (type=0)
+        // 3. 如果api地址以 ".json" 结尾，则认为是JSON类型 (type=1)
+        // 4. 其他情况默认为JSON类型 (type=1)，因为现在大部分都是JSON
+        let type = 1; // 默认为JSON类型
+        
+        const apiLower = source.api.toLowerCase();
+        if (apiLower.includes('at/xml') || apiLower.endsWith('.xml')) {
+          type = 0; // XML类型
+        }
+        
+        return {
+          key: source.key || source.name,
+          name: source.name,
+          type: type, // 使用智能判断的type
+          api: source.api,
+          searchable: 1, // 可搜索
+          quickSearch: 1, // 支持快速搜索
+          filterable: 1, // 支持分类筛选
+          ext: source.detail || '', // 详情页地址作为扩展参数
+          timeout: 30, // 30秒超时
+          categories: [
+            "电影", "电视剧", "综艺", "动漫", "纪录片", "短剧"
+          ]
+        };
+      }),
 
       // 解析源配置（添加一些常用的解析源）
       parses: [
