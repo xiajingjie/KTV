@@ -29,8 +29,8 @@ body-template: |
 
   #### Docker 部署
   ```bash
-  docker pull ghcr.io/katelya77/katelyatv:v$RESOLVED_VERSION
-  docker run -d --name katelyatv -p 3000:3000 --env PASSWORD=your_password ghcr.io/katelya77/katelyatv:v$RESOLVED_VERSION
+  docker pull ghcr.io/chris202010/ktv:v$RESOLVED_VERSION
+  docker run -d --name ktv -p 3000:3000 --env PASSWORD=your_password ghcr.io/chris202010/ktv:v$RESOLVED_VERSION
   ```
 
   #### 环境变量更新
@@ -40,10 +40,10 @@ body-template: |
   查看 [CHANGELOG.md](CHANGELOG.md) 了解详细的更新历史。
 
   ### 🔗 相关链接
-  - [项目主页](https://github.com/katelya77/KatelyaTV)
-  - [在线演示](https://katelyatv.vercel.app)
-  - [问题反馈](https://github.com/katelya77/KatelyaTV/issues)
-  - [功能建议](https://github.com/katelya77/KatelyaTV/discussions)
+  - [项目主页](https://github.com/chris202010/KTV)
+  - [在线演示](https://ktv.vercel.app)
+  - [问题反馈](https://github.com/chris202010/KTV/issues)
+  - [功能建议](https://github.com/chris202010/KTV/discussions)
 
 # 发布配置
 prerelease: false
@@ -124,8 +124,8 @@ template: |
 
   1. **Docker 部署**（推荐）
      ```bash
-     docker pull ghcr.io/katelya77/katelyatv:v$RESOLVED_VERSION
-     docker run -d --name katelyatv -p 3000:3000 --env PASSWORD=your_password ghcr.io/katelya77/katelyatv:v$RESOLVED_VERSION
+     docker pull ghcr.io/chris202010/ktv:v$RESOLVED_VERSION
+     docker run -d --name ktv -p 3000:3000 --env PASSWORD=your_password ghcr.io/chris202010/ktv:v$RESOLVED_VERSION
      ```
 
   2. **Vercel 部署**
@@ -152,7 +152,7 @@ template: |
 
   ## 🔗 相关资源
 
-  - [项目文档](https://github.com/katelya77/KatelyaTV#readme)
-  - [问题反馈](https://github.com/katelya77/KatelyaTV/issues)
-  - [功能讨论](https://github.com/katelya77/KatelyaTV/discussions)
-  - [贡献指南](https://github.com/katelya77/KatelyaTV/blob/main/CONTRIBUTING.md)
+  - [项目文档](https://github.com/chris202010/KTV#readme)
+  - [问题反馈](https://github.com/chris202010/KTV/issues)
+  - [功能讨论](https://github.com/chris202010/KTV/discussions)
+  - [贡献指南](https://github.com/chris202010/KTV/blob/main/CONTRIBUTING.md)
