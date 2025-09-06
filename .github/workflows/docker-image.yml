@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: katelya77/katelyatv
+  IMAGE_NAME: chris202010/ktv
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
