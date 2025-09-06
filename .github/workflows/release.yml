@@ -138,8 +138,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/katelya77/katelyatv:${{ github.ref_name }}
-            ghcr.io/katelya77/katelyatv:latest
+            ghcr.io/chris202010/ktv:${{ github.ref_name }}
+            ghcr.io/chris202010/ktv:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
